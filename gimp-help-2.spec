@@ -1,123 +1,309 @@
+%define gimp_help_dir %{_datadir}/gimp/2.0/help
+
 Summary: Help files for Gimp2
 Name:    gimp-help-2
 Version: 0.13
 Release: %mkrel 1
 Source0: ftp://ftp.gimp.org/pub/gimp/help/%name-%version.tar.bz2
 License: GFDL
-Group:   Development/Other
+Group: Books/Other
 Url: http://docs.gimp.org/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: gimp2-devel
 BuildRequires: libxslt-proc
 BuildRequires: libxml2-utils
 BuildRequires: docbook-style-xsl
 BuildRequires: docbook-dtd43-xml
+BuildRequires: gnome-doc-utils
 BuildArch: noarch
 
 %description
 This is the new HTML help for Gimp 2.
 
+# -----------------------------------------------------
+%package common
+Summary: Common files for Gimp2 help
+Group: Books/Other
+
+%description common
+This package contains common files for Gimp2 help.
+
+%files common
+%defattr(-,root,root)
+%doc AUTHORS NEWS README HACKING TERMINOLOGY
+%dir %gimp_help_dir/images
+%gimp_help_dir/images/*.png
+%gimp_help_dir/images/callouts/
+
+%dir %gimp_help_dir/images/dialogs/
+%gimp_help_dir/images/dialogs/*.png
+%gimp_help_dir/images/dialogs/examples/
+
+%dir %gimp_help_dir/images/filters/
+%gimp_help_dir/images/filters/*.*
+
+%dir %gimp_help_dir/images/filters/examples/
+%gimp_help_dir/images/filters/examples/*.*
+
+%gimp_help_dir/images/glossary/
+
+%dir %gimp_help_dir/images/math
+%gimp_help_dir/images/math/*.png
+
+%dir %gimp_help_dir/images/menus/
+%gimp_help_dir/images/menus/*.png
+
+%dir %gimp_help_dir/images/preferences/
+%gimp_help_dir/images/preferences/*.png
+
+%dir %gimp_help_dir/images/tool-options/
+%gimp_help_dir/images/tool-options/*.png
+
+%dir %gimp_help_dir/images/toolbox
+%gimp_help_dir/images/toolbox/*.png
+
+%dir %gimp_help_dir/images/tutorials
+%gimp_help_dir/images/tutorials/*.*
+
+%dir %gimp_help_dir/images/using
+%gimp_help_dir/images/using/*.*
+
+# -----------------------------------------------------
+%package cs
+Summary: Czech translation of Gimp2 help
+Group: Books/Other
+Requires: locales-cs
+Requires: %name-common = %version-%release
+Provides: %name = %version-%release
+Obsoletes: %name < 0.13
+
+%description cs
+This package conatians Czech translation of Gimp2 help.
+
+%files cs
+%defattr(-,root,root)
+%gimp_help_dir/images/*/cs
+%gimp_help_dir/cs
+
+# -----------------------------------------------------
+%package de
+Summary: German translation of Gimp2 help
+Group: Books/Other
+Requires: locales-de
+Requires: %name-common = %version-%release
+Provides: %name = %version-%release
+Obsoletes: %name < 0.13
+
+%description de
+This package conatians German translation of Gimp2 help.
+
+%files de
+%defattr(-,root,root)
+%gimp_help_dir/images/*/de
+%gimp_help_dir/images/filters/examples/de
+%gimp_help_dir/de
+
+# -----------------------------------------------------
+%package en
+Summary: English translation of Gimp2 help
+Group: Books/Other
+Requires: locales-en
+Requires: %name-common = %version-%release
+Provides: %name = %version-%release
+Obsoletes: %name < 0.13
+
+%description en
+This package conatians Spanish translation of Gimp2 help.
+
+%files en
+%defattr(-,root,root)
+%gimp_help_dir/images/filters/examples/en
+%gimp_help_dir/en
+
+# -----------------------------------------------------
+%package es
+Summary: Spanish translation of Gimp2 help
+Group: Books/Other
+Requires: locales-es
+Requires: %name-common = %version-%release
+Provides: %name = %version-%release
+Obsoletes: %name < 0.13
+
+%description es
+This package conatians Spanish translation of Gimp2 help.
+
+%files es
+%defattr(-,root,root)
+%gimp_help_dir/images/*/es
+%gimp_help_dir/es
+
+# -----------------------------------------------------
+%package fr
+Summary: French translation of Gimp2 help
+Group: Books/Other
+Requires: locales-fr
+Requires: %name-common = %version-%release
+Provides: %name = %version-%release
+Obsoletes: %name < 0.13
+
+%description fr
+This package conatians French translation of Gimp2 help.
+
+%files fr
+%defattr(-,root,root)
+%gimp_help_dir/images/*/fr
+%gimp_help_dir/images/filters/examples/fr
+%gimp_help_dir/fr
+
+# -----------------------------------------------------
+%package hr
+Summary: Croatian translation of Gimp2 help
+Group: Books/Other
+Requires: locales-hr
+Requires: %name-common = %version-%release
+Provides: %name = %version-%release
+Obsoletes: %name < 0.13
+
+%description hr
+This package conatians Croatian translation of Gimp2 help.
+
+%files hr
+%defattr(-,root,root)
+%gimp_help_dir/images/*/hr
+%gimp_help_dir/hr
+
+# -----------------------------------------------------
+%package it
+Summary: Italian translation of Gimp2 help
+Group: Books/Other
+Requires: locales-it
+Requires: %name-common = %version-%release
+Provides: %name = %version-%release
+Obsoletes: %name < 0.13
+
+%description it
+This package conatians Italian translation of Gimp2 help.
+
+%files it
+%defattr(-,root,root)
+%gimp_help_dir/images/*/it
+%gimp_help_dir/images/filters/examples/it
+%gimp_help_dir/it
+
+# -----------------------------------------------------
+%package ko
+Summary: Korean translation of Gimp2 help
+Group: Books/Other
+Requires: locales-ko
+Requires: %name-common = %version-%release
+Provides: %name = %version-%release
+Obsoletes: %name < 0.13
+
+%description ko
+This package conatians Korean translation of Gimp2 help.
+
+%files ko
+%defattr(-,root,root)
+%gimp_help_dir/images/*/ko
+%gimp_help_dir/ko
+
+# -----------------------------------------------------
+%package nl
+Summary: Dutch translation of Gimp2 help
+Group: Books/Other
+Requires: locales-nl
+Requires: %name-common = %version-%release
+Provides: %name = %version-%release
+Obsoletes: %name < 0.13
+
+%description nl
+This package conatians Dutch translation of Gimp2 help.
+
+%files nl
+%defattr(-,root,root)
+%gimp_help_dir/images/*/nl
+%gimp_help_dir/nl
+
+# -----------------------------------------------------
+%package no
+Summary: Norwegian translation of Gimp2 help
+Group: Books/Other
+Requires: locales-no
+Requires: %name-common = %version-%release
+Provides: %name = %version-%release
+Obsoletes: %name < 0.13
+
+%description no
+This package conatians Norwegian translation of Gimp2 help.
+
+%files no
+%defattr(-,root,root)
+%gimp_help_dir/images/*/no
+%gimp_help_dir/images/filters/examples/no
+%gimp_help_dir/no
+
+# -----------------------------------------------------
+%package ru
+Summary: Russian translation of Gimp2 help
+Group: Books/Other
+Requires: locales-ru
+Requires: %name-common = %version-%release
+Provides: %name = %version-%release
+Obsoletes: %name < 0.13
+
+%description ru
+This package conatians Russian translation of Gimp2 help.
+
+%files ru
+%defattr(-,root,root)
+%gimp_help_dir/images/*/ru
+%gimp_help_dir/ru
+
+# -----------------------------------------------------
+%package sv
+Summary: Swidish translation of Gimp2 help
+Group: Books/Other
+Requires: locales-sv
+Requires: %name-common = %version-%release
+Provides: %name = %version-%release
+Obsoletes: %name < 0.13
+
+%description sv
+This package conatians Swedish translation of Gimp2 help.
+
+%files sv
+%defattr(-,root,root)
+#%gimp_help_dir/images/*/sv
+%gimp_help_dir/sv
+
+# -----------------------------------------------------
+%package zh_CN
+Summary: Simplified Chinese translation of Gimp2 help
+Group: Books/Other
+Requires: locales-zh
+Requires: %name-common = %version-%release
+Provides: %name = %version-%release
+Obsoletes: %name < 0.13
+
+%description zh_CN
+This package conatians Simplified Chinese translation of Gimp2 help.
+
+%files zh_CN
+%defattr(-,root,root)
+%gimp_help_dir/images/*/zh_CN
+%gimp_help_dir/zh_CN
+
+# -----------------------------------------------------
+
 %prep
 %setup -q
 
 %build
-%configure2_5x
+%configure2_5x --without-gimp
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
 
-
 %clean
 rm -rf $RPM_BUILD_ROOT
-
-%files
-%defattr(-,root,root)
-%doc AUTHORS NEWS README HACKING TERMINOLOGY
-%dir %_datadir/gimp/2.0/help/images
-%_datadir/gimp/2.0/help/images/*.png
-%_datadir/gimp/2.0/help/images/callouts/
-%dir %_datadir/gimp/2.0/help/images/dialogs/
-%_datadir/gimp/2.0/help/images/dialogs/*.png
-%lang(cs) %_datadir/gimp/2.0/help/images/dialogs/cs/
-%lang(de) %_datadir/gimp/2.0/help/images/dialogs/de/
-%lang(es) %_datadir/gimp/2.0/help/images/dialogs/es/
-%lang(fr) %_datadir/gimp/2.0/help/images/dialogs/fr/
-%lang(it) %_datadir/gimp/2.0/help/images/dialogs/it/
-%lang(ko) %_datadir/gimp/2.0/help/images/dialogs/ko/
-%lang(nl) %_datadir/gimp/2.0/help/images/dialogs/nl/
-%lang(no) %_datadir/gimp/2.0/help/images/dialogs/no/
-%lang(ru) %_datadir/gimp/2.0/help/images/dialogs/ru/
-%lang(zh) %_datadir/gimp/2.0/help/images/dialogs/zh_CN/
-%_datadir/gimp/2.0/help/images/dialogs/examples/
-%dir %_datadir/gimp/2.0/help/images/filters/
-%_datadir/gimp/2.0/help/images/filters/*.png
-%lang(cs) %_datadir/gimp/2.0/help/images/filters/cs/
-%lang(de) %_datadir/gimp/2.0/help/images/filters/de/
-%lang(es) %_datadir/gimp/2.0/help/images/filters/es/
-%lang(fr) %_datadir/gimp/2.0/help/images/filters/fr/
-%lang(it) %_datadir/gimp/2.0/help/images/filters/it/
-%lang(zh) %_datadir/gimp/2.0/help/images/filters/zh_CN/
-%_datadir/gimp/2.0/help/images/filters/examples/
-%_datadir/gimp/2.0/help/images/glossary/
-%_datadir/gimp/2.0/help/images/math/
-%dir %_datadir/gimp/2.0/help/images/menus/
-%_datadir/gimp/2.0/help/images/menus/*.png
-%lang(cs) %_datadir/gimp/2.0/help/images/menus/cs/
-%lang(de) %_datadir/gimp/2.0/help/images/menus/de/
-%lang(fr) %_datadir/gimp/2.0/help/images/menus/fr/
-%lang(it) %_datadir/gimp/2.0/help/images/menus/it/
-%lang(no) %_datadir/gimp/2.0/help/images/menus/no/
-%lang(zh) %_datadir/gimp/2.0/help/images/menus/zh_CN/
-%dir %_datadir/gimp/2.0/help/images/preferences/
-%_datadir/gimp/2.0/help/images/preferences/*.png
-%lang(de) %_datadir/gimp/2.0/help/images/preferences/de/
-%lang(fr) %_datadir/gimp/2.0/help/images/preferences/fr/
-%lang(it) %_datadir/gimp/2.0/help/images/preferences/it/
-%lang(nl) %_datadir/gimp/2.0/help/images/preferences/nl/
-%lang(ru) %_datadir/gimp/2.0/help/images/preferences/ru/
-%lang(zh) %_datadir/gimp/2.0/help/images/preferences/zh_CN/
-%dir %_datadir/gimp/2.0/help/images/tool-options/
-%_datadir/gimp/2.0/help/images/tool-options/*.png
-%lang(es) %_datadir/gimp/2.0/help/images/tool-options/es/
-%lang(it) %_datadir/gimp/2.0/help/images/tool-options/it/
-%dir %_datadir/gimp/2.0/help/images/toolbox
-%_datadir/gimp/2.0/help/images/toolbox/*.png
-%lang(cs) %_datadir/gimp/2.0/help/images/toolbox/cs/
-%lang(de) %_datadir/gimp/2.0/help/images/toolbox/de/
-%lang(es) %_datadir/gimp/2.0/help/images/toolbox/es/
-%lang(fr) %_datadir/gimp/2.0/help/images/toolbox/fr/
-%lang(it) %_datadir/gimp/2.0/help/images/toolbox/it/
-%lang(ko) %_datadir/gimp/2.0/help/images/toolbox/ko/
-%lang(nl) %_datadir/gimp/2.0/help/images/toolbox/nl/
-%lang(no) %_datadir/gimp/2.0/help/images/toolbox/no/
-%lang(zh) %_datadir/gimp/2.0/help/images/toolbox/zh_CN/
-%dir %_datadir/gimp/2.0/help/images/using/*.*
-%lang(cs) %_datadir/gimp/2.0/help/images/using/cs/
-%lang(de) %_datadir/gimp/2.0/help/images/using/de/
-%lang(es) %_datadir/gimp/2.0/help/images/using/es/
-%lang(fr) %_datadir/gimp/2.0/help/images/using/fr/
-%lang(hr) %_datadir/gimp/2.0/help/images/using/hr/
-%lang(it) %_datadir/gimp/2.0/help/images/using/it/
-%lang(ko) %_datadir/gimp/2.0/help/images/using/ko/
-%lang(nl) %_datadir/gimp/2.0/help/images/using/nl/
-%lang(no) %_datadir/gimp/2.0/help/images/using/no/
-%lang(ru) %_datadir/gimp/2.0/help/images/using/ru/
-%lang(zh) %_datadir/gimp/2.0/help/images/using/zh_CN/
-
-%lang(cs) %_datadir/gimp/2.0/help/cs
-%lang(de) %_datadir/gimp/2.0/help/de
-%lang(es) %_datadir/gimp/2.0/help/es
-%lang(it) %_datadir/gimp/2.0/help/it
-%_datadir/gimp/2.0/help/en
-%lang(fr) %_datadir/gimp/2.0/help/fr
-%lang(hr) %_datadir/gimp/2.0/help/hr
-%lang(ko) %_datadir/gimp/2.0/help/ko
-%lang(nl) %_datadir/gimp/2.0/help/nl
-%lang(no) %_datadir/gimp/2.0/help/no
-%lang(ru) %_datadir/gimp/2.0/help/ru
-%lang(sv) %_datadir/gimp/2.0/help/sv
-%lang(zh) %_datadir/gimp/2.0/help/zh_CN
-
-
