@@ -3,7 +3,7 @@
 Summary: Help files for Gimp2
 Name:    gimp-help-2
 Version: 0.13
-Release: %mkrel 2
+Release: %mkrel 3
 Source0: ftp://ftp.gimp.org/pub/gimp/help/%name-%version.tar.bz2
 License: GFDL
 Group: Books/Other
@@ -23,6 +23,7 @@ This is the new HTML help for Gimp 2.
 %package common
 Summary: Common files for Gimp2 help
 Group: Books/Other
+Conflicts: %name < 0.13-2
 
 %description common
 This package contains common files for Gimp2 help.
