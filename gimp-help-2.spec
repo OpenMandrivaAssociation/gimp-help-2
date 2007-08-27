@@ -3,7 +3,7 @@
 Summary: Help files for Gimp2
 Name:    gimp-help-2
 Version: 0.13
-Release: %mkrel 1
+Release: %mkrel 2
 Source0: ftp://ftp.gimp.org/pub/gimp/help/%name-%version.tar.bz2
 License: GFDL
 Group: Books/Other
@@ -75,6 +75,7 @@ Requires: locales-cs
 Requires: %name-common = %version-%release
 Provides: %name = %version-%release
 Obsoletes: %name < 0.13
+Conflicts: %name < 0.13-2
 
 %description cs
 This package conatians Czech translation of Gimp2 help.
@@ -92,6 +93,7 @@ Requires: locales-de
 Requires: %name-common = %version-%release
 Provides: %name = %version-%release
 Obsoletes: %name < 0.13
+Conflicts: %name < 0.13-2
 
 %description de
 This package conatians German translation of Gimp2 help.
@@ -110,6 +112,7 @@ Requires: locales-en
 Requires: %name-common = %version-%release
 Provides: %name = %version-%release
 Obsoletes: %name < 0.13
+Conflicts: %name < 0.13-2
 
 %description en
 This package conatians Spanish translation of Gimp2 help.
@@ -127,6 +130,7 @@ Requires: locales-es
 Requires: %name-common = %version-%release
 Provides: %name = %version-%release
 Obsoletes: %name < 0.13
+Conflicts: %name < 0.13-2
 
 %description es
 This package conatians Spanish translation of Gimp2 help.
@@ -144,6 +148,7 @@ Requires: locales-fr
 Requires: %name-common = %version-%release
 Provides: %name = %version-%release
 Obsoletes: %name < 0.13
+Conflicts: %name < 0.13-2
 
 %description fr
 This package conatians French translation of Gimp2 help.
@@ -162,6 +167,7 @@ Requires: locales-hr
 Requires: %name-common = %version-%release
 Provides: %name = %version-%release
 Obsoletes: %name < 0.13
+Conflicts: %name < 0.13-2
 
 %description hr
 This package conatians Croatian translation of Gimp2 help.
@@ -179,6 +185,7 @@ Requires: locales-it
 Requires: %name-common = %version-%release
 Provides: %name = %version-%release
 Obsoletes: %name < 0.13
+Conflicts: %name < 0.13-2
 
 %description it
 This package conatians Italian translation of Gimp2 help.
@@ -197,6 +204,7 @@ Requires: locales-ko
 Requires: %name-common = %version-%release
 Provides: %name = %version-%release
 Obsoletes: %name < 0.13
+Conflicts: %name < 0.13-2
 
 %description ko
 This package conatians Korean translation of Gimp2 help.
@@ -214,6 +222,7 @@ Requires: locales-nl
 Requires: %name-common = %version-%release
 Provides: %name = %version-%release
 Obsoletes: %name < 0.13
+Conflicts: %name < 0.13-2
 
 %description nl
 This package conatians Dutch translation of Gimp2 help.
@@ -231,6 +240,7 @@ Requires: locales-no
 Requires: %name-common = %version-%release
 Provides: %name = %version-%release
 Obsoletes: %name < 0.13
+Conflicts: %name < 0.13-2
 
 %description no
 This package conatians Norwegian translation of Gimp2 help.
@@ -249,6 +259,7 @@ Requires: locales-ru
 Requires: %name-common = %version-%release
 Provides: %name = %version-%release
 Obsoletes: %name < 0.13
+Conflicts: %name < 0.13-2
 
 %description ru
 This package conatians Russian translation of Gimp2 help.
@@ -266,6 +277,7 @@ Requires: locales-sv
 Requires: %name-common = %version-%release
 Provides: %name = %version-%release
 Obsoletes: %name < 0.13
+Conflicts: %name < 0.13-2
 
 %description sv
 This package conatians Swedish translation of Gimp2 help.
@@ -283,6 +295,7 @@ Requires: locales-zh
 Requires: %name-common = %version-%release
 Provides: %name = %version-%release
 Obsoletes: %name < 0.13
+Conflicts: %name < 0.13-2
 
 %description zh_CN
 This package conatians Simplified Chinese translation of Gimp2 help.
