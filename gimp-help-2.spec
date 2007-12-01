@@ -1,10 +1,10 @@
 %define gimp_help_dir %{_datadir}/gimp/2.0/help
-
+%define oname gimp-help
 Summary: Help files for Gimp2
 Name:    gimp-help-2
-Version: 0.13
-Release: %mkrel 3
-Source0: ftp://ftp.gimp.org/pub/gimp/help/%name-%version.tar.bz2
+Version: 2.4.0
+Release: %mkrel 1
+Source0: ftp://ftp.gimp.org/pub/gimp/help/%oname-%version.tar.bz2
 License: GFDL
 Group: Books/Other
 Url: http://docs.gimp.org/
@@ -84,7 +84,6 @@ This package conatians Czech translation of Gimp2 help.
 %files cs
 %defattr(-,root,root)
 %gimp_help_dir/images/*/cs
-%gimp_help_dir/cs
 
 # -----------------------------------------------------
 %package de
@@ -120,7 +119,6 @@ This package conatians Spanish translation of Gimp2 help.
 
 %files en
 %defattr(-,root,root)
-%gimp_help_dir/images/filters/examples/en
 %gimp_help_dir/en
 
 # -----------------------------------------------------
@@ -176,7 +174,6 @@ This package conatians Croatian translation of Gimp2 help.
 %files hr
 %defattr(-,root,root)
 %gimp_help_dir/images/*/hr
-%gimp_help_dir/hr
 
 # -----------------------------------------------------
 %package it
@@ -285,7 +282,6 @@ This package conatians Swedish translation of Gimp2 help.
 
 %files sv
 %defattr(-,root,root)
-#%gimp_help_dir/images/*/sv
 %gimp_help_dir/sv
 
 # -----------------------------------------------------
@@ -304,12 +300,11 @@ This package conatians Simplified Chinese translation of Gimp2 help.
 %files zh_CN
 %defattr(-,root,root)
 %gimp_help_dir/images/*/zh_CN
-%gimp_help_dir/zh_CN
 
 # -----------------------------------------------------
 
 %prep
-%setup -q
+%setup -q -n %oname-%version
 
 %build
 %configure2_5x --without-gimp
