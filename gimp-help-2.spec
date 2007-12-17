@@ -8,7 +8,6 @@ Source0: ftp://ftp.gimp.org/pub/gimp/help/%oname-%version.tar.bz2
 License: GFDL
 Group: Books/Other
 Url: http://docs.gimp.org/
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: libxslt-proc
 BuildRequires: libxml2-utils
 BuildRequires: docbook-style-xsl
