@@ -3,7 +3,7 @@
 Summary: Help files for Gimp2
 Name:    gimp-help-2
 Version: 2.4.0
-Release: %mkrel 1
+Release: %mkrel 2
 Source0: ftp://ftp.gimp.org/pub/gimp/help/%oname-%version.tar.bz2
 License: GFDL
 Group: Books/Other
@@ -79,7 +79,7 @@ Obsoletes: %name < 0.13
 Conflicts: %name < 0.13-2
 
 %description cs
-This package conatians Czech translation of Gimp2 help.
+This package contains Czech translation of Gimp2 help.
 
 %files cs
 %defattr(-,root,root)
@@ -96,7 +96,7 @@ Obsoletes: %name < 0.13
 Conflicts: %name < 0.13-2
 
 %description de
-This package conatians German translation of Gimp2 help.
+This package contains German translation of Gimp2 help.
 
 %files de
 %defattr(-,root,root)
@@ -115,7 +115,7 @@ Obsoletes: %name < 0.13
 Conflicts: %name < 0.13-2
 
 %description en
-This package conatians Spanish translation of Gimp2 help.
+This package contains English translation of Gimp2 help.
 
 %files en
 %defattr(-,root,root)
@@ -132,7 +132,7 @@ Obsoletes: %name < 0.13
 Conflicts: %name < 0.13-2
 
 %description es
-This package conatians Spanish translation of Gimp2 help.
+This package contains Spanish translation of Gimp2 help.
 
 %files es
 %defattr(-,root,root)
@@ -150,7 +150,7 @@ Obsoletes: %name < 0.13
 Conflicts: %name < 0.13-2
 
 %description fr
-This package conatians French translation of Gimp2 help.
+This package contains French translation of Gimp2 help.
 
 %files fr
 %defattr(-,root,root)
@@ -169,7 +169,7 @@ Obsoletes: %name < 0.13
 Conflicts: %name < 0.13-2
 
 %description hr
-This package conatians Croatian translation of Gimp2 help.
+This package contains Croatian translation of Gimp2 help.
 
 %files hr
 %defattr(-,root,root)
@@ -186,7 +186,7 @@ Obsoletes: %name < 0.13
 Conflicts: %name < 0.13-2
 
 %description it
-This package conatians Italian translation of Gimp2 help.
+This package contains Italian translation of Gimp2 help.
 
 %files it
 %defattr(-,root,root)
@@ -205,7 +205,7 @@ Obsoletes: %name < 0.13
 Conflicts: %name < 0.13-2
 
 %description ko
-This package conatians Korean translation of Gimp2 help.
+This package contains Korean translation of Gimp2 help.
 
 %files ko
 %defattr(-,root,root)
@@ -223,7 +223,7 @@ Obsoletes: %name < 0.13
 Conflicts: %name < 0.13-2
 
 %description nl
-This package conatians Dutch translation of Gimp2 help.
+This package contains Dutch translation of Gimp2 help.
 
 %files nl
 %defattr(-,root,root)
@@ -241,7 +241,7 @@ Obsoletes: %name < 0.13
 Conflicts: %name < 0.13-2
 
 %description no
-This package conatians Norwegian translation of Gimp2 help.
+This package contains Norwegian translation of Gimp2 help.
 
 %files no
 %defattr(-,root,root)
@@ -260,7 +260,7 @@ Obsoletes: %name < 0.13
 Conflicts: %name < 0.13-2
 
 %description ru
-This package conatians Russian translation of Gimp2 help.
+This package contains Russian translation of Gimp2 help.
 
 %files ru
 %defattr(-,root,root)
@@ -278,7 +278,7 @@ Obsoletes: %name < 0.13
 Conflicts: %name < 0.13-2
 
 %description sv
-This package conatians Swedish translation of Gimp2 help.
+This package contains Swedish translation of Gimp2 help.
 
 %files sv
 %defattr(-,root,root)
@@ -295,7 +295,7 @@ Obsoletes: %name < 0.13
 Conflicts: %name < 0.13-2
 
 %description zh_CN
-This package conatians Simplified Chinese translation of Gimp2 help.
+This package contains Simplified Chinese translation of Gimp2 help.
 
 %files zh_CN
 %defattr(-,root,root)
