@@ -269,7 +269,7 @@ This package contains Russian translation of Gimp2 help.
 
 # -----------------------------------------------------
 %package sv
-Summary: Swidish translation of Gimp2 help
+Summary: Swedish translation of Gimp2 help
 Group: Books/Other
 Requires: locales-sv
 Requires: %name-common = %version-%release
