@@ -2,8 +2,8 @@
 %define oname gimp-help
 Summary: Help files for Gimp2
 Name:    gimp-help-2
-Version: 2.4.0
-Release: %mkrel 2
+Version: 2.4.1
+Release: %mkrel 1
 Source0: ftp://ftp.gimp.org/pub/gimp/help/%oname-%version.tar.bz2
 License: GFDL
 Group: Books/Other
@@ -52,6 +52,7 @@ This package contains common files for Gimp2 help.
 
 %dir %gimp_help_dir/images/menus/
 %gimp_help_dir/images/menus/*.png
+%gimp_help_dir/images/menus/*.jpg
 
 %dir %gimp_help_dir/images/preferences/
 %gimp_help_dir/images/preferences/*.png
@@ -81,9 +82,25 @@ Conflicts: %name < 0.13-2
 %description cs
 This package contains Czech translation of Gimp2 help.
 
-%files cs
+#%files cs
+#%defattr(-,root,root)
+#%gimp_help_dir/images/*/cs
+
+%package pl
+Summary: Polish translation of Gimp2 help
+Group: Books/Other
+Requires: locales-pl
+Requires: %name-common = %version-%release
+Provides: %name = %version-%release
+Obsoletes: %name < 0.13
+Conflicts: %name < 0.13-2
+
+%description pl
+This package contains Polish translation of Gimp2 help.
+
+%files pl
 %defattr(-,root,root)
-%gimp_help_dir/images/*/cs
+%gimp_help_dir/pl
 
 # -----------------------------------------------------
 %package de
@@ -171,9 +188,9 @@ Conflicts: %name < 0.13-2
 %description hr
 This package contains Croatian translation of Gimp2 help.
 
-%files hr
-%defattr(-,root,root)
-%gimp_help_dir/images/*/hr
+#%files hr
+#%defattr(-,root,root)
+#%gimp_help_dir/images/*/hr
 
 # -----------------------------------------------------
 %package it
@@ -297,9 +314,9 @@ Conflicts: %name < 0.13-2
 %description zh_CN
 This package contains Simplified Chinese translation of Gimp2 help.
 
-%files zh_CN
-%defattr(-,root,root)
-%gimp_help_dir/images/*/zh_CN
+#%files zh_CN
+#%defattr(-,root,root)
+#%gimp_help_dir/images/*/zh_CN
 
 # -----------------------------------------------------
 
