@@ -17,7 +17,7 @@ BuildRequires: gnome-doc-utils
 BuildArch: noarch
 
 %description
-This is the new HTML help for Gimp 2.
+This is the HTML help for Gimp 2.
 
 # -----------------------------------------------------
 %package common
