@@ -42,6 +42,9 @@ This package contains common files for Gimp2 help.
 %dir %gimp_help_dir/images/filters/
 %gimp_help_dir/images/filters/*.*
 
+%dir %gimp_help_dir/images/filters/alpha-to-logo/
+%gimp_help_dir/images/filters/alpha-to-logo/*.*
+
 %dir %gimp_help_dir/images/filters/examples/
 %gimp_help_dir/images/filters/examples/*.*
 
@@ -53,6 +56,7 @@ This package contains common files for Gimp2 help.
 %dir %gimp_help_dir/images/menus/
 %gimp_help_dir/images/menus/*.png
 %gimp_help_dir/images/menus/*.jpg
+%gimp_help_dir/images/menus/file/new/logos/chrome.jpg
 
 %dir %gimp_help_dir/images/preferences/
 %gimp_help_dir/images/preferences/*.png
