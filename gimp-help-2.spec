@@ -2,110 +2,44 @@
 %define oname gimp-help
 Summary: Help files for Gimp2
 Name:    gimp-help-2
-Version: 2.4.2
-Release: %mkrel 2
-Source0: ftp://ftp.gimp.org/pub/gimp/help/%oname-%version.tar.bz2
+Version: 2.6.0
+Release: %mkrel 1
+Source0: ftp://ftp.gimp.org/pub/gimp/help/%oname-%version-html-de.tar.bz2
+Source1: ftp://ftp.gimp.org/pub/gimp/help/%oname-%version-html-en.tar.bz2
+Source2: ftp://ftp.gimp.org/pub/gimp/help/%oname-%version-html-es.tar.bz2
+Source3: ftp://ftp.gimp.org/pub/gimp/help/%oname-%version-html-fr.tar.bz2
+Source4: ftp://ftp.gimp.org/pub/gimp/help/%oname-%version-html-it.tar.bz2
+Source5: ftp://ftp.gimp.org/pub/gimp/help/%oname-%version-html-ja.tar.bz2
+Source6: ftp://ftp.gimp.org/pub/gimp/help/%oname-%version-html-ko.tar.bz2
+Source7: ftp://ftp.gimp.org/pub/gimp/help/%oname-%version-html-nl.tar.bz2
+Source8: ftp://ftp.gimp.org/pub/gimp/help/%oname-%version-html-nn.tar.bz2
+Source9: ftp://ftp.gimp.org/pub/gimp/help/%oname-%version-html-pl.tar.bz2
+Source10: ftp://ftp.gimp.org/pub/gimp/help/%oname-%version-html-ru.tar.bz2
+Source11: ftp://ftp.gimp.org/pub/gimp/help/%oname-%version-html-sv.tar.bz2
+Source12: ftp://ftp.gimp.org/pub/gimp/help/%oname-%version-html-zh_CN.tar.bz2
 License: GFDL
 Group: Books/Other
 Url: http://docs.gimp.org/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: libxslt-proc
-BuildRequires: libxml2-utils
-BuildRequires: docbook-style-xsl
-BuildRequires: docbook-dtd43-xml
-BuildRequires: gnome-doc-utils
 BuildArch: noarch
 
 %description
 This is the HTML help for Gimp 2.
 
-# -----------------------------------------------------
-%package common
-Summary: Common files for Gimp2 help
-Group: Books/Other
-Conflicts: %name < 0.13-2
-
-%description common
-This package contains common files for Gimp2 help.
-
-%files common
-%defattr(-,root,root)
-%doc AUTHORS NEWS README HACKING TERMINOLOGY
-%dir %gimp_help_dir/images
-%gimp_help_dir/images/*.png
-%gimp_help_dir/images/callouts/
-
-%dir %gimp_help_dir/images/dialogs/
-%gimp_help_dir/images/dialogs/*.png
-%gimp_help_dir/images/dialogs/examples/
-
-%dir %gimp_help_dir/images/filters/
-%gimp_help_dir/images/filters/*.*
-
-%dir %gimp_help_dir/images/filters/alpha-to-logo/
-%gimp_help_dir/images/filters/alpha-to-logo/*.*
-
-%dir %gimp_help_dir/images/filters/examples/
-%gimp_help_dir/images/filters/examples/*.*
-
-%gimp_help_dir/images/glossary/
-
-%dir %gimp_help_dir/images/math
-%gimp_help_dir/images/math/*.png
-
-%dir %gimp_help_dir/images/menus/
-%gimp_help_dir/images/menus/*.png
-%gimp_help_dir/images/menus/*.jpg
-%gimp_help_dir/images/menus/file/new/logos/chrome.jpg
-
-%dir %gimp_help_dir/images/preferences/
-%gimp_help_dir/images/preferences/*.png
-
-%dir %gimp_help_dir/images/tool-options/
-%gimp_help_dir/images/tool-options/*.png
-
-%dir %gimp_help_dir/images/toolbox
-%gimp_help_dir/images/toolbox/*.png
-
-%dir %gimp_help_dir/images/tutorials
-%gimp_help_dir/images/tutorials/*.*
-
-%dir %gimp_help_dir/images/using
-%gimp_help_dir/images/using/*.*
-
-# -----------------------------------------------------
-%if 0
-%package cs
-Summary: Czech translation of Gimp2 help
-Group: Books/Other
-Requires: locales-cs
-Requires: %name-common = %version-%release
-Provides: %name = %version-%release
-Obsoletes: %name < 0.13
-Conflicts: %name < 0.13-2
-
-%description cs
-This package contains Czech translation of Gimp2 help.
-
-#%files cs
-#%defattr(-,root,root)
-#%gimp_help_dir/images/*/cs
-%endif
-
 %package pl
 Summary: Polish translation of Gimp2 help
 Group: Books/Other
 Requires: locales-pl
-Requires: %name-common = %version-%release
 Provides: %name = %version-%release
 Obsoletes: %name < 0.13
 Conflicts: %name < 0.13-2
 
 %description pl
-This package contains Polish translation of Gimp2 help.
+This package contains the Polish translation of Gimp2 help.
 
 %files pl
 %defattr(-,root,root)
+%doc %name/AUTHORS %name/MAINTAINERS %name/README %name/HACKING
 %gimp_help_dir/pl
 
 # -----------------------------------------------------
@@ -113,18 +47,16 @@ This package contains Polish translation of Gimp2 help.
 Summary: German translation of Gimp2 help
 Group: Books/Other
 Requires: locales-de
-Requires: %name-common = %version-%release
 Provides: %name = %version-%release
 Obsoletes: %name < 0.13
 Conflicts: %name < 0.13-2
 
 %description de
-This package contains German translation of Gimp2 help.
+This package contains the German translation of Gimp2 help.
 
 %files de
 %defattr(-,root,root)
-%gimp_help_dir/images/*/de
-%gimp_help_dir/images/filters/examples/de
+%doc %name/AUTHORS %name/MAINTAINERS %name/README %name/HACKING
 %gimp_help_dir/de
 
 # -----------------------------------------------------
@@ -132,16 +64,16 @@ This package contains German translation of Gimp2 help.
 Summary: English translation of Gimp2 help
 Group: Books/Other
 Requires: locales-en
-Requires: %name-common = %version-%release
 Provides: %name = %version-%release
 Obsoletes: %name < 0.13
 Conflicts: %name < 0.13-2
 
 %description en
-This package contains English translation of Gimp2 help.
+This package contains the English translation of Gimp2 help.
 
 %files en
 %defattr(-,root,root)
+%doc %name/AUTHORS %name/MAINTAINERS %name/README %name/HACKING
 %gimp_help_dir/en
 
 # -----------------------------------------------------
@@ -149,17 +81,16 @@ This package contains English translation of Gimp2 help.
 Summary: Spanish translation of Gimp2 help
 Group: Books/Other
 Requires: locales-es
-Requires: %name-common = %version-%release
 Provides: %name = %version-%release
 Obsoletes: %name < 0.13
 Conflicts: %name < 0.13-2
 
 %description es
-This package contains Spanish translation of Gimp2 help.
+This package contains the Spanish translation of Gimp2 help.
 
 %files es
 %defattr(-,root,root)
-%gimp_help_dir/images/*/es
+%doc %name/AUTHORS %name/MAINTAINERS %name/README %name/HACKING
 %gimp_help_dir/es
 
 # -----------------------------------------------------
@@ -167,74 +98,65 @@ This package contains Spanish translation of Gimp2 help.
 Summary: French translation of Gimp2 help
 Group: Books/Other
 Requires: locales-fr
-Requires: %name-common = %version-%release
 Provides: %name = %version-%release
 Obsoletes: %name < 0.13
 Conflicts: %name < 0.13-2
 
 %description fr
-This package contains French translation of Gimp2 help.
+This package contains the French translation of Gimp2 help.
 
 %files fr
 %defattr(-,root,root)
-%gimp_help_dir/images/*/fr
-%gimp_help_dir/images/filters/examples/fr
+%doc %name/AUTHORS %name/MAINTAINERS %name/README %name/HACKING
 %gimp_help_dir/fr
 
-# -----------------------------------------------------
-%if 0
-%package hr
-Summary: Croatian translation of Gimp2 help
-Group: Books/Other
-Requires: locales-hr
-Requires: %name-common = %version-%release
-Provides: %name = %version-%release
-Obsoletes: %name < 0.13
-Conflicts: %name < 0.13-2
 
-%description hr
-This package contains Croatian translation of Gimp2 help.
-
-#%files hr
-#%defattr(-,root,root)
-#%gimp_help_dir/images/*/hr
-%endif
-
-# -----------------------------------------------------
 %package it
 Summary: Italian translation of Gimp2 help
 Group: Books/Other
 Requires: locales-it
-Requires: %name-common = %version-%release
 Provides: %name = %version-%release
 Obsoletes: %name < 0.13
 Conflicts: %name < 0.13-2
 
 %description it
-This package contains Italian translation of Gimp2 help.
+This package contains the Italian translation of Gimp2 help.
 
 %files it
 %defattr(-,root,root)
-%gimp_help_dir/images/*/it
-%gimp_help_dir/images/filters/examples/it
+%doc %name/AUTHORS %name/MAINTAINERS %name/README %name/HACKING
 %gimp_help_dir/it
 
-# -----------------------------------------------------
+%package ja
+Summary: Japanese translation of Gimp2 help
+Group: Books/Other
+Requires: locales-ja
+Provides: %name = %version-%release
+Obsoletes: %name < 0.13
+Conflicts: %name < 0.13-2
+
+%description ja
+This package contains the Japanese translation of Gimp2 help.
+
+%files ja
+%defattr(-,root,root)
+%doc %name/AUTHORS %name/MAINTAINERS %name/README %name/HACKING
+%gimp_help_dir/ja
+
 %package ko
 Summary: Korean translation of Gimp2 help
 Group: Books/Other
 Requires: locales-ko
-Requires: %name-common = %version-%release
 Provides: %name = %version-%release
 Obsoletes: %name < 0.13
 Conflicts: %name < 0.13-2
 
 %description ko
-This package contains Korean translation of Gimp2 help.
+This package contains the Korean translation of Gimp2 help.
 
 %files ko
 %defattr(-,root,root)
-%gimp_help_dir/images/*/ko
+%doc %name/AUTHORS %name/MAINTAINERS %name/README %name/HACKING
 %gimp_help_dir/ko
 
 # -----------------------------------------------------
@@ -242,54 +164,52 @@ This package contains Korean translation of Gimp2 help.
 Summary: Dutch translation of Gimp2 help
 Group: Books/Other
 Requires: locales-nl
-Requires: %name-common = %version-%release
 Provides: %name = %version-%release
 Obsoletes: %name < 0.13
 Conflicts: %name < 0.13-2
 
 %description nl
-This package contains Dutch translation of Gimp2 help.
+This package contains the Dutch translation of Gimp2 help.
 
 %files nl
 %defattr(-,root,root)
-%gimp_help_dir/images/*/nl
+%doc %name/AUTHORS %name/MAINTAINERS %name/README %name/HACKING
 %gimp_help_dir/nl
 
 # -----------------------------------------------------
-%package no
-Summary: Norwegian translation of Gimp2 help
+%package nn
+Summary: Nynorsk Norwegian translation of Gimp2 help
 Group: Books/Other
 Requires: locales-no
-Requires: %name-common = %version-%release
 Provides: %name = %version-%release
 Obsoletes: %name < 0.13
 Conflicts: %name < 0.13-2
+Obsoletes: %name-no
+Provides: %name-no
 
-%description no
-This package contains Norwegian translation of Gimp2 help.
+%description nn
+This package contains the Nynorsk Norwegian translation of Gimp2 help.
 
-%files no
+%files nn
 %defattr(-,root,root)
-%gimp_help_dir/images/*/no
-%gimp_help_dir/images/filters/examples/no
-%gimp_help_dir/no
+%doc %name/AUTHORS %name/MAINTAINERS %name/README %name/HACKING
+%gimp_help_dir/nn
 
 # -----------------------------------------------------
 %package ru
 Summary: Russian translation of Gimp2 help
 Group: Books/Other
 Requires: locales-ru
-Requires: %name-common = %version-%release
 Provides: %name = %version-%release
 Obsoletes: %name < 0.13
 Conflicts: %name < 0.13-2
 
 %description ru
-This package contains Russian translation of Gimp2 help.
+This package contains the Russian translation of Gimp2 help.
 
 %files ru
 %defattr(-,root,root)
-%gimp_help_dir/images/*/ru
+%doc %name/AUTHORS %name/MAINTAINERS %name/README %name/HACKING
 %gimp_help_dir/ru
 
 # -----------------------------------------------------
@@ -297,49 +217,44 @@ This package contains Russian translation of Gimp2 help.
 Summary: Swedish translation of Gimp2 help
 Group: Books/Other
 Requires: locales-sv
-Requires: %name-common = %version-%release
 Provides: %name = %version-%release
 Obsoletes: %name < 0.13
 Conflicts: %name < 0.13-2
 
 %description sv
-This package contains Swedish translation of Gimp2 help.
+This package contains the Swedish translation of Gimp2 help.
 
 %files sv
 %defattr(-,root,root)
+%doc %name/AUTHORS %name/MAINTAINERS %name/README %name/HACKING
 %gimp_help_dir/sv
 
 # -----------------------------------------------------
-%if 0
 %package zh_CN
 Summary: Simplified Chinese translation of Gimp2 help
 Group: Books/Other
 Requires: locales-zh
-Requires: %name-common = %version-%release
 Provides: %name = %version-%release
 Obsoletes: %name < 0.13
 Conflicts: %name < 0.13-2
 
 %description zh_CN
-This package contains Simplified Chinese translation of Gimp2 help.
+This package contains the Simplified Chinese translation of Gimp2 help.
 
-#%files zh_CN
-#%defattr(-,root,root)
-#%gimp_help_dir/images/*/zh_CN
-%endif
+%files zh_CN
+%defattr(-,root,root)
+%doc %name/AUTHORS %name/MAINTAINERS %name/README %name/HACKING
+%gimp_help_dir/zh_CN
 
 # -----------------------------------------------------
 
 %prep
-%setup -q -n %oname-%version
-
-%build
-%configure2_5x --without-gimp
-make
+%setup -q -c %oname-%version -a 1 -a 2 -a 3 -a 4 -a 5 -a 6 -a 7 -a 8 -a 9 -a 10 -a 11 -a 12
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%makeinstall_std
+mkdir -p %buildroot%gimp_help_dir
+cp -r %name/html/* %buildroot%gimp_help_dir
 
 %clean
 rm -rf $RPM_BUILD_ROOT
