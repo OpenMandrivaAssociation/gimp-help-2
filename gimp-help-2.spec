@@ -3,7 +3,7 @@
 Summary: Help files for Gimp2
 Name:    gimp-help-2
 Version: 2.6.0
-Release: %mkrel 2
+Release: %mkrel 3
 Source0: ftp://ftp.gimp.org/pub/gimp/help/%oname-%version-html-de.tar.bz2
 Source1: ftp://ftp.gimp.org/pub/gimp/help/%oname-%version-html-en.tar.bz2
 Source2: ftp://ftp.gimp.org/pub/gimp/help/%oname-%version-html-es.tar.bz2
