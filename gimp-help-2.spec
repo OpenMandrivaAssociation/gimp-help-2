@@ -252,9 +252,9 @@ This package contains the Simplified Chinese translation of Gimp2 help.
 %setup -q -c %oname-%version -a 1 -a 2 -a 3 -a 4 -a 5 -a 6 -a 7 -a 8 -a 9 -a 10 -a 11 -a 12
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 mkdir -p %buildroot%gimp_help_dir
 cp -r %name/html/* %buildroot%gimp_help_dir
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
