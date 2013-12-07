@@ -4,7 +4,7 @@
 Summary:	Help files for Gimp2
 Name:		gimp-help-2
 Version:	2.6.0
-Release:	6
+Release:	7
 License:	GFDL
 Group:		Books/Other
 Url:		http://docs.gimp.org/
