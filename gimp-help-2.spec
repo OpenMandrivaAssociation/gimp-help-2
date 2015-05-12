@@ -14,6 +14,7 @@ BuildArch:	noarch
 %description
 This is the HTML help for Gimp 2.
 
+%if 0
 %package pl
 Summary:	Polish translation of Gimp2 help
 Group:		Books/Other
@@ -28,6 +29,7 @@ This package contains the Polish translation of Gimp2 help.
 %files pl
 %doc %{name}/AUTHORS %{name}/MAINTAINERS %{name}/README %{name}/HACKING
 %{gimp_help_dir}/pl
+%endif
 
 # -----------------------------------------------------
 %package de
@@ -44,6 +46,19 @@ This package contains the German translation of Gimp2 help.
 %files de
 %doc %{name}/AUTHORS %{name}/MAINTAINERS %{name}/README %{name}/HACKING
 %{gimp_help_dir}/de
+
+# -----------------------------------------------------
+%package el
+Summary:        Greek translation of Gimp2 help
+Group:          Books/Other
+Requires:       locales-el
+Provides:       %{name} = %{version}-%{release}
+
+%description el
+This package contains the Greek translation of Gimp2 help.
+
+%files el
+%{gimp_help_dir}/el
 
 # -----------------------------------------------------
 %package en
@@ -78,6 +93,19 @@ This package contains the Spanish translation of Gimp2 help.
 %{gimp_help_dir}/es
 
 # -----------------------------------------------------
+%package fi
+Summary:        Finnish translation of Gimp2 help
+Group:          Books/Other
+Requires:       locales-fi
+Provides:       %{name} = %{version}-%{release}
+
+%description fi
+This package contains the Finnish translation of Gimp2 help.
+
+%files fi
+%{gimp_help_dir}/fi
+
+# -----------------------------------------------------
 %package fr
 Summary:	French translation of Gimp2 help
 Group:		Books/Other
@@ -93,7 +121,7 @@ This package contains the French translation of Gimp2 help.
 %doc %{name}/AUTHORS %{name}/MAINTAINERS %{name}/README %{name}/HACKING
 %{gimp_help_dir}/fr
 
-
+%if 0
 %package it
 Summary:	Italian translation of Gimp2 help
 Group:		Books/Other
@@ -108,6 +136,7 @@ This package contains the Italian translation of Gimp2 help.
 %files it
 %doc %{name}/AUTHORS %{name}/MAINTAINERS %{name}/README %{name}/HACKING
 %{gimp_help_dir}/it
+%endif
 
 %package ja
 Summary:	Japanese translation of Gimp2 help
@@ -140,6 +169,7 @@ This package contains the Korean translation of Gimp2 help.
 %{gimp_help_dir}/ko
 
 # -----------------------------------------------------
+%if 0
 %package nl
 Summary:	Dutch translation of Gimp2 help
 Group:		Books/Other
@@ -154,6 +184,7 @@ This package contains the Dutch translation of Gimp2 help.
 %files nl
 %doc %{name}/AUTHORS %{name}/MAINTAINERS %{name}/README %{name}/HACKING
 %{gimp_help_dir}/nl
+%endif
 
 # -----------------------------------------------------
 %package nn
@@ -188,6 +219,19 @@ This package contains the Russian translation of Gimp2 help.
 %files ru
 %doc %{name}/AUTHORS %{name}/MAINTAINERS %{name}/README %{name}/HACKING
 %{gimp_help_dir}/ru
+
+# -----------------------------------------------------
+%package sl
+Summary:        Slovenian translation of Gimp2 help
+Group:          Books/Other
+Requires:       locales-sl
+Provides:       %{name} = %{version}-%{release}
+
+%description sl
+This package contains the Slovenian translation of Gimp2 help.
+
+%files sl
+%{gimp_help_dir}/sl
 
 # -----------------------------------------------------
 %package sv
