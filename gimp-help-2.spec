@@ -3,24 +3,12 @@
 
 Summary:	Help files for Gimp2
 Name:		gimp-help-2
-Version:	2.6.0
-Release:	12
+Version:	2.8.2
+Release:	1
 License:	GFDL
 Group:		Books/Other
 Url:		http://docs.gimp.org/
-Source0:	ftp://ftp.gimp.org/pub/gimp/help/%{oname}-%{version}-html-de.tar.bz2
-Source1:	ftp://ftp.gimp.org/pub/gimp/help/%{oname}-%{version}-html-en.tar.bz2
-Source2:	ftp://ftp.gimp.org/pub/gimp/help/%{oname}-%{version}-html-es.tar.bz2
-Source3:	ftp://ftp.gimp.org/pub/gimp/help/%{oname}-%{version}-html-fr.tar.bz2
-Source4:	ftp://ftp.gimp.org/pub/gimp/help/%{oname}-%{version}-html-it.tar.bz2
-Source5:	ftp://ftp.gimp.org/pub/gimp/help/%{oname}-%{version}-html-ja.tar.bz2
-Source6:	ftp://ftp.gimp.org/pub/gimp/help/%{oname}-%{version}-html-ko.tar.bz2
-Source7:	ftp://ftp.gimp.org/pub/gimp/help/%{oname}-%{version}-html-nl.tar.bz2
-Source8:	ftp://ftp.gimp.org/pub/gimp/help/%{oname}-%{version}-html-nn.tar.bz2
-Source9:	ftp://ftp.gimp.org/pub/gimp/help/%{oname}-%{version}-html-pl.tar.bz2
-Source10:	ftp://ftp.gimp.org/pub/gimp/help/%{oname}-%{version}-html-ru.tar.bz2
-Source11:	ftp://ftp.gimp.org/pub/gimp/help/%{oname}-%{version}-html-sv.tar.bz2
-Source12:	ftp://ftp.gimp.org/pub/gimp/help/%{oname}-%{version}-html-zh_CN.tar.bz2
+Source0:        http://download.gimp.org/pub/gimp/help/%{oname}-%{version}.tar.bz2
 BuildArch:	noarch
 
 %description
@@ -236,10 +224,14 @@ This package contains the Simplified Chinese translation of Gimp2 help.
 # -----------------------------------------------------
 
 %prep
-%setup -q -c %{oname}-%{version} -a 1 -a 2 -a 3 -a 4 -a 5 -a 6 -a 7 -a 8 -a 9 -a 10 -a 11 -a 12
+%setup -qn %{oname}-%{version}
+
+sed -i 's#/usr/bin/env python#/usr/bin/env python2#' tools/xml2po.py
+
+%build
+export ALL_LINGUAS="de el en es fi fr ja ko nn ru sl sv zh_CN"
+%configure2_5x --build=%{_host} --without-gimp
+%make
 
 %install
-mkdir -p %{buildroot}%{gimp_help_dir}
-cp -r %{name}/html/* %{buildroot}%{gimp_help_dir}
-
-
+%makeinstall_std
