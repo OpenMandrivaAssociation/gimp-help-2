@@ -3,29 +3,18 @@
 
 Summary:	Help files for Gimp2
 Name:		gimp-help-2
-Version:	2.6.0
-Release:	6
+Version:	2.8.2
+Release:	1
 License:	GFDL
 Group:		Books/Other
 Url:		http://docs.gimp.org/
-Source0:	ftp://ftp.gimp.org/pub/gimp/help/%{oname}-%{version}-html-de.tar.bz2
-Source1:	ftp://ftp.gimp.org/pub/gimp/help/%{oname}-%{version}-html-en.tar.bz2
-Source2:	ftp://ftp.gimp.org/pub/gimp/help/%{oname}-%{version}-html-es.tar.bz2
-Source3:	ftp://ftp.gimp.org/pub/gimp/help/%{oname}-%{version}-html-fr.tar.bz2
-Source4:	ftp://ftp.gimp.org/pub/gimp/help/%{oname}-%{version}-html-it.tar.bz2
-Source5:	ftp://ftp.gimp.org/pub/gimp/help/%{oname}-%{version}-html-ja.tar.bz2
-Source6:	ftp://ftp.gimp.org/pub/gimp/help/%{oname}-%{version}-html-ko.tar.bz2
-Source7:	ftp://ftp.gimp.org/pub/gimp/help/%{oname}-%{version}-html-nl.tar.bz2
-Source8:	ftp://ftp.gimp.org/pub/gimp/help/%{oname}-%{version}-html-nn.tar.bz2
-Source9:	ftp://ftp.gimp.org/pub/gimp/help/%{oname}-%{version}-html-pl.tar.bz2
-Source10:	ftp://ftp.gimp.org/pub/gimp/help/%{oname}-%{version}-html-ru.tar.bz2
-Source11:	ftp://ftp.gimp.org/pub/gimp/help/%{oname}-%{version}-html-sv.tar.bz2
-Source12:	ftp://ftp.gimp.org/pub/gimp/help/%{oname}-%{version}-html-zh_CN.tar.bz2
+Source0:        http://download.gimp.org/pub/gimp/help/%{oname}-%{version}.tar.bz2
 BuildArch:	noarch
 
 %description
 This is the HTML help for Gimp 2.
 
+%if 0
 %package pl
 Summary:	Polish translation of Gimp2 help
 Group:		Books/Other
@@ -40,6 +29,7 @@ This package contains the Polish translation of Gimp2 help.
 %files pl
 %doc %{name}/AUTHORS %{name}/MAINTAINERS %{name}/README %{name}/HACKING
 %{gimp_help_dir}/pl
+%endif
 
 # -----------------------------------------------------
 %package de
@@ -56,6 +46,19 @@ This package contains the German translation of Gimp2 help.
 %files de
 %doc %{name}/AUTHORS %{name}/MAINTAINERS %{name}/README %{name}/HACKING
 %{gimp_help_dir}/de
+
+# -----------------------------------------------------
+%package el
+Summary:        Greek translation of Gimp2 help
+Group:          Books/Other
+Requires:       locales-el
+Provides:       %{name} = %{version}-%{release}
+
+%description el
+This package contains the Greek translation of Gimp2 help.
+
+%files el
+%{gimp_help_dir}/el
 
 # -----------------------------------------------------
 %package en
@@ -90,6 +93,19 @@ This package contains the Spanish translation of Gimp2 help.
 %{gimp_help_dir}/es
 
 # -----------------------------------------------------
+%package fi
+Summary:        Finnish translation of Gimp2 help
+Group:          Books/Other
+Requires:       locales-fi
+Provides:       %{name} = %{version}-%{release}
+
+%description fi
+This package contains the Finnish translation of Gimp2 help.
+
+%files fi
+%{gimp_help_dir}/fi
+
+# -----------------------------------------------------
 %package fr
 Summary:	French translation of Gimp2 help
 Group:		Books/Other
@@ -105,7 +121,7 @@ This package contains the French translation of Gimp2 help.
 %doc %{name}/AUTHORS %{name}/MAINTAINERS %{name}/README %{name}/HACKING
 %{gimp_help_dir}/fr
 
-
+%if 0
 %package it
 Summary:	Italian translation of Gimp2 help
 Group:		Books/Other
@@ -120,6 +136,7 @@ This package contains the Italian translation of Gimp2 help.
 %files it
 %doc %{name}/AUTHORS %{name}/MAINTAINERS %{name}/README %{name}/HACKING
 %{gimp_help_dir}/it
+%endif
 
 %package ja
 Summary:	Japanese translation of Gimp2 help
@@ -152,6 +169,7 @@ This package contains the Korean translation of Gimp2 help.
 %{gimp_help_dir}/ko
 
 # -----------------------------------------------------
+%if 0
 %package nl
 Summary:	Dutch translation of Gimp2 help
 Group:		Books/Other
@@ -166,6 +184,7 @@ This package contains the Dutch translation of Gimp2 help.
 %files nl
 %doc %{name}/AUTHORS %{name}/MAINTAINERS %{name}/README %{name}/HACKING
 %{gimp_help_dir}/nl
+%endif
 
 # -----------------------------------------------------
 %package nn
@@ -202,6 +221,19 @@ This package contains the Russian translation of Gimp2 help.
 %{gimp_help_dir}/ru
 
 # -----------------------------------------------------
+%package sl
+Summary:        Slovenian translation of Gimp2 help
+Group:          Books/Other
+Requires:       locales-sl
+Provides:       %{name} = %{version}-%{release}
+
+%description sl
+This package contains the Slovenian translation of Gimp2 help.
+
+%files sl
+%{gimp_help_dir}/sl
+
+# -----------------------------------------------------
 %package sv
 Summary:	Swedish translation of Gimp2 help
 Group:			Books/Other
@@ -236,10 +268,14 @@ This package contains the Simplified Chinese translation of Gimp2 help.
 # -----------------------------------------------------
 
 %prep
-%setup -q -c %{oname}-%{version} -a 1 -a 2 -a 3 -a 4 -a 5 -a 6 -a 7 -a 8 -a 9 -a 10 -a 11 -a 12
+%setup -qn %{oname}-%{version}
+
+sed -i 's#/usr/bin/env python#/usr/bin/env python2#' tools/xml2po.py
+
+%build
+export ALL_LINGUAS="de el en es fi fr ja ko nn ru sl sv zh_CN"
+%configure2_5x --build=%{_host} --without-gimp
+%make
 
 %install
-mkdir -p %{buildroot}%{gimp_help_dir}
-cp -r %{name}/html/* %{buildroot}%{gimp_help_dir}
-
-
+%makeinstall_std
