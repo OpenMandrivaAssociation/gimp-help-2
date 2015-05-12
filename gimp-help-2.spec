@@ -11,7 +11,7 @@ Url:		http://docs.gimp.org/
 Source0:        http://download.gimp.org/pub/gimp/help/%{oname}-%{version}.tar.bz2
 BuildArch:	noarch
 BuildRequires:  xsltproc
-BuildRequires:  libxml2-python
+BuildRequires:  python2-libxml2
 BuildRequires:  docbook-style-xsl
 
 %description
