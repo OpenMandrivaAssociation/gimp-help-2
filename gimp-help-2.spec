@@ -30,7 +30,6 @@ Conflicts:	%{name} < 0.13-2
 This package contains the Polish translation of Gimp2 help.
 
 %files pl
-%doc %{name}/AUTHORS %{name}/MAINTAINERS %{name}/README %{name}/HACKING
 %{gimp_help_dir}/pl
 %endif
 
@@ -47,7 +46,6 @@ Conflicts:	%{name} < 0.13-2
 This package contains the German translation of Gimp2 help.
 
 %files de
-%doc %{name}/AUTHORS %{name}/MAINTAINERS %{name}/README %{name}/HACKING
 %{gimp_help_dir}/de
 
 # -----------------------------------------------------
@@ -76,7 +74,6 @@ Conflicts:	%{name} < 0.13-2
 This package contains the English translation of Gimp2 help.
 
 %files en
-%doc %{name}/AUTHORS %{name}/MAINTAINERS %{name}/README %{name}/HACKING
 %{gimp_help_dir}/en
 
 # -----------------------------------------------------
@@ -92,7 +89,6 @@ Conflicts:	%{name} < 0.13-2
 This package contains the Spanish translation of Gimp2 help.
 
 %files es
-%doc %{name}/AUTHORS %{name}/MAINTAINERS %{name}/README %{name}/HACKING
 %{gimp_help_dir}/es
 
 # -----------------------------------------------------
@@ -121,7 +117,6 @@ Conflicts:	%{name} < 0.13-2
 This package contains the French translation of Gimp2 help.
 
 %files fr
-%doc %{name}/AUTHORS %{name}/MAINTAINERS %{name}/README %{name}/HACKING
 %{gimp_help_dir}/fr
 
 %if 0
@@ -137,7 +132,6 @@ Conflicts:	%{name} < 0.13-2
 This package contains the Italian translation of Gimp2 help.
 
 %files it
-%doc %{name}/AUTHORS %{name}/MAINTAINERS %{name}/README %{name}/HACKING
 %{gimp_help_dir}/it
 %endif
 
@@ -153,7 +147,6 @@ Conflicts:	%{name} < 0.13-2
 This package contains the Japanese translation of Gimp2 help.
 
 %files ja
-%doc %{name}/AUTHORS %{name}/MAINTAINERS %{name}/README %{name}/HACKING
 %{gimp_help_dir}/ja
 
 %package ko
@@ -168,7 +161,6 @@ Conflicts:	%{name} < 0.13-2
 This package contains the Korean translation of Gimp2 help.
 
 %files ko
-%doc %{name}/AUTHORS %{name}/MAINTAINERS %{name}/README %{name}/HACKING
 %{gimp_help_dir}/ko
 
 # -----------------------------------------------------
@@ -185,7 +177,6 @@ Conflicts:	%{name} < 0.13-2
 This package contains the Dutch translation of Gimp2 help.
 
 %files nl
-%doc %{name}/AUTHORS %{name}/MAINTAINERS %{name}/README %{name}/HACKING
 %{gimp_help_dir}/nl
 %endif
 
@@ -204,7 +195,6 @@ Provides:	%{name}-no
 This package contains the Nynorsk Norwegian translation of Gimp2 help.
 
 %files nn
-%doc %{name}/AUTHORS %{name}/MAINTAINERS %{name}/README %{name}/HACKING
 %{gimp_help_dir}/nn
 
 # -----------------------------------------------------
@@ -220,7 +210,6 @@ Conflicts:	%{name} < 0.13-2
 This package contains the Russian translation of Gimp2 help.
 
 %files ru
-%doc %{name}/AUTHORS %{name}/MAINTAINERS %{name}/README %{name}/HACKING
 %{gimp_help_dir}/ru
 
 # -----------------------------------------------------
@@ -249,7 +238,6 @@ Conflicts:	%{name} < 0.13-2
 This package contains the Swedish translation of Gimp2 help.
 
 %files sv
-%doc %{name}/AUTHORS %{name}/MAINTAINERS %{name}/README %{name}/HACKING
 %{gimp_help_dir}/sv
 
 # -----------------------------------------------------
@@ -265,7 +253,6 @@ Conflicts:	%{name} < 0.13-2
 This package contains the Simplified Chinese translation of Gimp2 help.
 
 %files zh_CN
-%doc %{name}/AUTHORS %{name}/MAINTAINERS %{name}/README %{name}/HACKING
 %{gimp_help_dir}/zh_CN
 
 # -----------------------------------------------------
