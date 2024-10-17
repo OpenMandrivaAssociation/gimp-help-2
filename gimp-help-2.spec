@@ -7,7 +7,7 @@ Version:	2.8.2
 Release:	4
 License:	GFDL
 Group:		Books/Other
-Url:		http://docs.gimp.org/
+Url:		https://docs.gimp.org/
 Source0:        http://download.gimp.org/pub/gimp/help/%{oname}-%{version}.tar.bz2
 BuildArch:	noarch
 BuildRequires:  xsltproc
