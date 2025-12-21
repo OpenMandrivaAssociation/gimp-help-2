@@ -10,6 +10,11 @@ Group:		Books/Other
 Url:		https://docs.gimp.org/
 Source0:        http://download.gimp.org/pub/gimp/help/%{oname}-%{version}.tar.bz2
 BuildArch:	noarch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:  xsltproc
 BuildRequires:  python2-libxml2
 BuildRequires:  docbook-style-xsl
